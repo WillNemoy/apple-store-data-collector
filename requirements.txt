@@ -1,5 +1,5 @@
 
-python-dotenv
+app-store-scraper
 pynytimes
 pandas
 openpyxl
