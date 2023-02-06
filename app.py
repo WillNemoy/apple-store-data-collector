@@ -19,6 +19,46 @@ def appleAPI(appId):
                      + "/sortBy=mostHelpful/json")
 
     apple_Json = requests.get(apple_request).json()
+
+    def clean_text(x):
+    
+        new_text = ""
+
+        for character in x:
+            if (character.isalnum() == True 
+                or character == " "
+                or character == "'"
+                or character == "#"
+                or character == "-"
+                or character == "("
+                or character == ")"
+                or character == "&"
+                or character == "%"
+                or character == "$"
+                or character == "@"
+                or character == "*"
+                or character == ":"
+                or character == ";"
+                or character == "."
+                or character == "?"
+                or character == "/"
+                or character == "["
+                or character == "]"
+                or character == "{"
+                or character == "}"
+                or character == "="
+                or character == "!"
+                or character == "<"
+                or character == ">"
+                or character == ","
+                or character == ""
+                or character == "_"
+                or character == "+"
+                or character == "|"):
+
+                new_text += character
+
+        return new_text
     
     return apple_Json
 
