@@ -27,13 +27,13 @@ def appleAPI(appId):
     """
 
     df = pd.DataFrame(apple_Json["feed"]["entry"])
-    df.to_csv("apple store reviews.csv")
-    
+    df.to_excel("apple store reviews.xlsx")
+
     return df
 
 
 #run the function
-appleAPI("324684580")
+appleAPI("835599320")
 ##print(appleAPI("324684580"))
 ##print(str(appleAPI("324684580")).encode("utf-8"))
 
