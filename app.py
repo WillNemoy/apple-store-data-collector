@@ -1,11 +1,28 @@
-from app_store_scraper import AppStore
+
+from pprint import pprint
+import json
+import datetime
+
+import requests
 import pandas as pd
 import numpy as np
 
-import json
+from openpyxl import Workbook, load_workbook
 
-tiktok = AppStore(country='us', app_name='tiktok', app_id='835599320')
+def appleAPI(appId):
 
-tiktok.review(how_many=1500)
+    page = 1
+    apple_request = ("https://itunes.apple.com/us/rss/customerreviews/page="
+                     + str(page)
+                     + "/id="
+                     + appId
+                     + "/sortBy=mostHelpful/json")
 
-print(tiktok.reviews)
+    apple_Json = requests.get(apple_request).json()
+    
+    return apple_Json
+
+
+#run the function
+
+pprint(appleAPI("324684580"))
