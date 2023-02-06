@@ -1,6 +1,5 @@
 
 app-store-scraper
-pynytimes
 pandas
 openpyxl
 
